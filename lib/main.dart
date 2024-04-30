@@ -1,23 +1,16 @@
-import 'package:Formus/app/router/Routes.dart';
+import 'package:Formus/app/initialize.dart';
+import 'package:Formus/start_app.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/services.dart';
 
-class FormusApp extends StatelessWidget {
-  final routerObserver = Get.put<RouteObserver>(RouteObserver<PageRoute>());
+void main() async {
+  await initialize();
+  appColorStart();
+  runApp(
+    FormusApp(),
+  );
+}
 
-  FormusApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Formus Teste',
-      initialRoute: '/home',
-      getPages: Routes.router,
-      navigatorObservers: [routerObserver],
-      localizationsDelegates: const [
-        DefaultWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: const [Locale('pt', 'BR')],
-    );
-  }
+void appColorStart() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 }
