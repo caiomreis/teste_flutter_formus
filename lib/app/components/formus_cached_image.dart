@@ -19,13 +19,13 @@ class FormusCachedImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(width),
+          Radius.circular(16),
         ),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(width),
+        borderRadius: BorderRadius.circular(16),
         child: _getImage(),
       ),
     );
@@ -42,7 +42,7 @@ class FormusCachedImage extends StatelessWidget {
             color: FormusColors.theme.neutral.white,
             image: DecorationImage(
               image: imageProvider,
-              fit: BoxFit.contain,
+              fit: BoxFit.cover,
             ),
           ),
         );
@@ -53,14 +53,15 @@ class FormusCachedImage extends StatelessWidget {
   }
 
   _getDefaultImage() {
-    String resume = label != null ? label![0].toUpperCase() : 'Q';
+    String resume = label != null ? label! : 'Formus';
 
     return Container(
       height: heigth,
       width: width,
       color: FormusColors.theme.blue.medium,
       child: Center(
-        child: Label.bold(
+        child: Label.medium(
+          textAlign: TextAlign.center,
           text: resume,
           color: FormusColors.theme.neutral.white,
         ),

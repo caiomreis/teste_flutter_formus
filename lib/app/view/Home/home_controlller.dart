@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   RxBool isLoading = RxBool(false);
   final MovieHttp _movieHttp = MovieHttp();
-  late Rx<List<Results>> movies;
+  final Rx<List<Results>> movies = Rx([]);
 
   @override
   Future<void> onInit() async {
@@ -15,13 +15,15 @@ class HomeController extends GetxController {
   }
 
   getMovieList() async {
+    isLoading = RxBool(true);
     try {
       final MovieResponse response = await _movieHttp.getMovieList();
-      movies = Rx(response.results!);
+      movies.value = response.results!;
     } catch (e) {
       if (kDebugMode) {
         print(e);
       }
     }
+    isLoading.value = false;
   }
 }
