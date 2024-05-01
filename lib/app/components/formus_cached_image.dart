@@ -58,7 +58,7 @@ class FormusCachedImage extends StatelessWidget {
     return Container(
       height: heigth,
       width: width,
-      color: FormusColors.theme.orange.medium,
+      color: FormusColors.theme.blue.medium,
       child: Center(
         child: Label.bold(
           text: resume,

@@ -46,7 +46,7 @@ android {
     defaultConfig {
  
         applicationId "com.formus_teste.teste_formus_flutter"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

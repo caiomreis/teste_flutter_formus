@@ -77,7 +77,7 @@ class FormusButton extends StatelessWidget {
           if (states.contains(MaterialState.pressed) && !disable!) {
             return color == ButtonColorEnum.blue
                 ? FormusColors.theme.blue.light
-                : FormusColors.theme.orange.strong;
+                : FormusColors.theme.blue.strong;
           }
 
           return _backgroundColor();
@@ -138,7 +138,7 @@ class FormusButton extends StatelessWidget {
     if (color == ButtonColorEnum.blue) return FormusColors.theme.blue.light;
 
     if (disable!) return const Color(0xFFFFF5F5);
-    return FormusColors.theme.orange.medium;
+    return FormusColors.theme.blue.medium;
   }
 
   Widget _buttonIcons() {

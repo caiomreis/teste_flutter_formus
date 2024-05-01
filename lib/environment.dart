@@ -19,15 +19,9 @@ class Enviroment {
 
   static String? get envName => _envName;
 
-  void load() {
-    final String flavor =
-        const String.fromEnvironment('flavor', defaultValue: 'DEV')
-            .toUpperCase();
+  Future<void> load() async {
     if (_hml.length != _prod.length) {
       throw 'production (${_prod.length}) and homolog (${_hml.length}) enviroments MUST have the same key amount';
     }
-    flavor == 'PROD' ? _setEnv(_prod) : _setEnv(_hml);
   }
-
-  void _setEnv(Map<String, String> env) {}
 }

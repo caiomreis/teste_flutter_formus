@@ -10,6 +10,6 @@ class Routes {
   Routes(this.context);
 
   static final List<GetPage> router = [
-    GetPage(name: '/home', page: () => const Home()),
+    GetPage(name: '/home', page: () => Home()),
   ];
 }

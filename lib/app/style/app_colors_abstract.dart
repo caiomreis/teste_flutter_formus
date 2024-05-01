@@ -36,19 +36,12 @@ abstract class AppBasicColorStatus {
 }
 
 abstract class AppColorsTheme {
-  AppColors get orange;
-  AppColors get pink;
   AppColors get blue;
-  AppColors get green;
   AppColors get gray;
   AppBasicColors get neutral;
   AppBasicColorStatus get status;
   AppColorsTheme copyWith({
-    AppColors? orange,
-    AppColors? pink,
     AppColors? blue,
-    AppColors? green,
-    AppColors? gray,
     AppBasicColors? neutral,
     AppColorStatus? status,
   });

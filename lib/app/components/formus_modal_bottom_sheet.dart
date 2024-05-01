@@ -20,7 +20,7 @@ class FormusModalBottonSheet {
       builder: (BuildContext context) {
         return Container(
           decoration: BoxDecoration(
-            color: color ?? FormusColors.theme.gray.light,
+            color: color ?? FormusColors.theme.blue.light,
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(16),
               topRight: Radius.circular(16),

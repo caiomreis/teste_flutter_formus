@@ -67,7 +67,7 @@ class FormusInputBase extends StatelessWidget {
             filled: true,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: FormusColors.theme.pink.strong,
+                color: FormusColors.theme.blue.strong,
               ),
             ),
             border: const OutlineInputBorder(),
