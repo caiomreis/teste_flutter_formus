@@ -28,7 +28,10 @@ class MovieDetail extends StatelessWidget {
             body: SingleChildScrollView(
               child: Stack(
                 children: [
-                  if (value.isLoading && value.loadingCast)
+                  if (!value.isLoading &&
+                      !value.loadingCast &&
+                      (value.movie.backdropPath != null ||
+                          value.movie.posterPath != null))
                     Container(
                       height: 260,
                       decoration: BoxDecoration(
