@@ -1,5 +1,4 @@
 import 'package:Formus/app/components/formus_snackbar/components/formus_snackbar_content.dart';
-import 'package:Formus/app/style/formus_icons.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +7,6 @@ class FormusSnackBar {
   static void _custom({
     required String title,
     String? message,
-    required FormusIconsEnum icon,
     required FormusSnackBarKindEnum kind,
     String? chipLabel,
     void Function()? onButtonTap,
@@ -20,7 +18,6 @@ class FormusSnackBar {
     final FormusSnackBarContent content = FormusSnackBarContent(
       title: title,
       message: message,
-      icon: icon,
       chipLabel: chipLabel,
       kind: kind,
       duration: duration,
@@ -54,7 +51,6 @@ class FormusSnackBar {
     required String title,
     String? message,
     required FormusSnackBarKindEnum kind,
-    required FormusIconsEnum icon,
     bool showTimer = false,
     Duration duration = const Duration(seconds: 4),
     BuildContext? context,
@@ -63,7 +59,6 @@ class FormusSnackBar {
       title: title,
       message: message,
       kind: kind,
-      icon: icon,
       showTimer: showTimer,
       duration: duration,
       context: context,
@@ -74,7 +69,6 @@ class FormusSnackBar {
     required String title,
     String? message,
     required FormusSnackBarKindEnum kind,
-    required FormusIconsEnum icon,
     required String chipLabel,
     required void Function() onButtonTap,
     bool showTimer = false,
@@ -85,7 +79,6 @@ class FormusSnackBar {
       title: title,
       message: message,
       kind: kind,
-      icon: icon,
       chipLabel: chipLabel,
       onButtonTap: onButtonTap,
       showTimer: showTimer,
@@ -98,7 +91,6 @@ class FormusSnackBar {
     required String title,
     String? message,
     required FormusSnackBarKindEnum kind,
-    required FormusIconsEnum icon,
     required void Function() onButtonTap,
     bool showTimer = false,
     Duration duration = const Duration(seconds: 4),
@@ -108,7 +100,6 @@ class FormusSnackBar {
       title: title,
       message: message,
       kind: kind,
-      icon: icon,
       onButtonTap: onButtonTap,
       showTimer: showTimer,
       duration: duration,

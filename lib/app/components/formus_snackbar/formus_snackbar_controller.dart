@@ -2,8 +2,7 @@ import 'package:Formus/app/components/text/body/body.dart';
 import 'package:Formus/app/components/formus_snackbar/formus_snackbar.dart';
 import 'package:Formus/app/style/app_colors.dart';
 
-import 'package:Formus/app/style/formus_icons.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FormusSnackBarController extends GetxController {
@@ -17,13 +16,11 @@ class FormusSnackBarController extends GetxController {
   final String? message;
   final String? chipLabel;
   final void Function()? onButtonTap;
-  final FormusIconsEnum icon;
 
   FormusSnackBarController({
     required this.kind,
     required this.title,
     this.message,
-    required this.icon,
     this.showTimer = false,
     this.duration = const Duration(seconds: 4),
     this.chipLabel,

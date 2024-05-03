@@ -12,15 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  bloc: ^8.0.3
-  flutter_bloc: ^8.0.1
   get: ^4.6.5
   hive: ^2.2.3
   flutter_secure_storage: ^8.0.0
   hive_flutter: ^1.1.0
   google_fonts: ^5.0.0
   flutter_svg: ^2.0.7
-  equatable: ^2.0.5
   animations: ^2.0.1
   cached_network_image: ^3.2.3
   http: ^1.1.0
@@ -29,6 +26,7 @@ dependencies:
   dio: ^5.4.3+1
   flutter_localizations:
     sdk: flutter
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

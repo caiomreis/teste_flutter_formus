@@ -64,13 +64,24 @@ class FormusInputBase extends StatelessWidget {
           readOnly: readOnly ?? false,
           inputFormatters: inputFormater,
           decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
             filled: true,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: FormusColors.theme.blue.strong,
               ),
             ),
-            border: const OutlineInputBorder(),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: FormusColors.theme.blue.strong,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: FormusColors.theme.gray.strong,
+              ),
+            ),
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
             fillColor: const Color(0xFFFFFFFF),

@@ -1,11 +1,7 @@
 // ignore_for_file: file_names
-
-import 'package:Formus/app/components/formus_snackbar/components/formus_snackbar_chip_button.dart';
-import 'package:Formus/app/components/formus_snackbar/components/formus_snackbar_close_button.dart';
 import 'package:Formus/app/components/formus_snackbar/formus_snackbar.dart';
 import 'package:Formus/app/components/formus_snackbar/formus_snackbar_controller.dart';
 import 'package:Formus/app/components/text/body/body.dart';
-import 'package:Formus/app/style/formus_icons.dart';
 import 'package:flutter/material.dart';
 
 class FormusSnackBarContent extends StatelessWidget {
@@ -14,7 +10,6 @@ class FormusSnackBarContent extends StatelessWidget {
   FormusSnackBarContent({
     Key? key,
     required FormusSnackBarKindEnum kind,
-    required FormusIconsEnum icon,
     bool showTimer = false,
     required String title,
     String? message,
@@ -26,7 +21,6 @@ class FormusSnackBarContent extends StatelessWidget {
           kind: kind,
           showTimer: showTimer,
           onButtonTap: onButtonTap,
-          icon: icon,
           message: message,
           title: title,
           chipLabel: chipLabel,
@@ -51,52 +45,34 @@ class FormusSnackBarContent extends StatelessWidget {
             ),
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 16.0,
-                  right: 12.0,
-                ),
-                child: FormusIcon(
-                  icon: controller.icon,
-                  color: controller.foregroundColor,
-                  width: 24,
-                  height: 24,
-                ),
-              ),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Body.medium(
-                      text: controller.title,
-                      color: controller.foregroundColor,
-                    ),
-                    if (controller.message != null)
-                      Expanded(
-                        child: Body.light(
-                          text: controller.message!,
-                          softWrap: true,
-                          color: controller.foregroundColor,
-                          overflow: TextOverflow.visible,
-                        ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 16.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Body.medium(
+                        text: controller.title,
+                        color: controller.foregroundColor,
                       ),
-                  ],
+                      if (controller.message != null)
+                        Expanded(
+                          child: Body.light(
+                            text: controller.message!,
+                            softWrap: true,
+                            color: controller.foregroundColor,
+                            overflow: TextOverflow.visible,
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               ),
-              if (controller.chipLabel != null)
-                FormusSnackBarChipButton(
-                  chipLabel: controller.chipLabel!,
-                  color: controller.foregroundColor,
-                  onButtonTap: controller.onButtonTap,
-                ),
-              if (controller.chipLabel == null &&
-                  controller.onButtonTap != null)
-                FormusSnackBarCloseButton(
-                  onButtonTap: controller.onButtonTap,
-                  color: controller.foregroundColor,
-                ),
             ],
           ),
         ),
