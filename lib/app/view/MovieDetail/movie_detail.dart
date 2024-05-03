@@ -82,44 +82,47 @@ class MovieDetail extends StatelessWidget {
                           const SizedBox(
                             height: 24,
                           ),
-                          Headline.bold(
-                            text: 'Cast',
-                          ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          CarouselSlider(
-                            options: CarouselOptions(
-                              viewportFraction: 0.5,
-                              height: 270,
+                          if (value.cast.isNotEmpty)
+                            Headline.bold(
+                              text: 'Cast',
                             ),
-                            items: value.cast.map((i) {
-                              return Builder(
-                                builder: (BuildContext context) {
-                                  return Column(children: [
-                                    FormusCachedImage(
-                                      heigth: 200,
-                                      width: 150,
-                                      label: i.name!,
-                                      imageUrl:
-                                          'https://image.tmdb.org/t/p/original/${i.profilePath}',
-                                    ),
-                                    const SizedBox(height: 12),
-                                    Center(
-                                        child: Label.bold(
-                                            text: 'Nome: ${i.name!}')),
-                                    const SizedBox(height: 4),
-                                    Center(
-                                      child: Label.bold(
-                                        text: 'Personagem: ${i.character!}',
-                                        textAlign: TextAlign.center,
+                          if (value.cast.isNotEmpty)
+                            const SizedBox(
+                              height: 12,
+                            ),
+                          if (value.cast.isNotEmpty)
+                            CarouselSlider(
+                              options: CarouselOptions(
+                                viewportFraction: 0.5,
+                                height: 270,
+                              ),
+                              items: value.cast.map((i) {
+                                return Builder(
+                                  builder: (BuildContext context) {
+                                    return Column(children: [
+                                      FormusCachedImage(
+                                        heigth: 200,
+                                        width: 150,
+                                        label: i.name!,
+                                        imageUrl:
+                                            'https://image.tmdb.org/t/p/original/${i.profilePath}',
                                       ),
-                                    ),
-                                  ]);
-                                },
-                              );
-                            }).toList(),
-                          ),
+                                      const SizedBox(height: 12),
+                                      Center(
+                                          child: Label.bold(
+                                              text: 'Nome: ${i.name!}')),
+                                      const SizedBox(height: 4),
+                                      Center(
+                                        child: Label.bold(
+                                          text: 'Personagem: ${i.character!}',
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ]);
+                                  },
+                                );
+                              }).toList(),
+                            ),
                           const SizedBox(
                             height: 24,
                           ),

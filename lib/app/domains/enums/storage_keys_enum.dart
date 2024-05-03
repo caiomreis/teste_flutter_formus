@@ -1,12 +1,5 @@
 enum StorageKeysEnum {
   token,
-  userInfo,
-  isAuth,
-  userName,
-  userPhoto,
-  userEmail,
-  groupInfos,
-  mainUser,
 }
 
 extension StorageKeysEnumExt on StorageKeysEnum {
@@ -14,20 +7,7 @@ extension StorageKeysEnumExt on StorageKeysEnum {
     switch (this) {
       case StorageKeysEnum.token:
         return 'token';
-      case StorageKeysEnum.userInfo:
-        return 'userInfo';
-      case StorageKeysEnum.isAuth:
-        return 'isAuth';
-      case StorageKeysEnum.userName:
-        return 'userName';
-      case StorageKeysEnum.userPhoto:
-        return 'userPhoto';
-      case StorageKeysEnum.userEmail:
-        return 'userEmail ';
-      case StorageKeysEnum.groupInfos:
-        return 'groupInfos ';
-      case StorageKeysEnum.mainUser:
-        return 'groupInfos ';
+
       default:
         return '';
     }
@@ -37,12 +17,7 @@ extension StorageKeysEnumExt on StorageKeysEnum {
     switch (storageKeys.toLowerCase()) {
       case 'token':
         return StorageKeysEnum.token;
-      case 'userInfo':
-        return StorageKeysEnum.userInfo;
-      case 'isAuth':
-        return StorageKeysEnum.isAuth;
-      case 'groupInfos ':
-        return StorageKeysEnum.groupInfos;
+
       default:
         return null;
     }

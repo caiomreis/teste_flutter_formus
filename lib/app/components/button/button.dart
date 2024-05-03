@@ -1,5 +1,4 @@
 import 'package:Formus/app/style/app_colors.dart';
-import 'package:Formus/app/style/formus_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,8 +7,6 @@ enum ButtonColorEnum { blue, orange }
 class FormusButton extends StatelessWidget {
   final String text;
   final ButtonColorEnum? color;
-  final FormusIconsEnum? leftIcon;
-  final FormusIconsEnum? rightIcon;
   final bool? isLoading;
   final bool? disable;
   final Function()? onPress;
@@ -19,9 +16,7 @@ class FormusButton extends StatelessWidget {
     required this.text,
     this.color,
     this.onPress,
-    this.leftIcon,
     this.isLoading = false,
-    this.rightIcon,
     this.disable = false,
   });
 
@@ -29,7 +24,6 @@ class FormusButton extends StatelessWidget {
     required String text,
     final ButtonColorEnum? color,
     final bool? isLoading,
-    final FormusIconsEnum? icon,
     final Function()? onPress,
     final bool? disable,
   }) {
@@ -37,7 +31,6 @@ class FormusButton extends StatelessWidget {
       text: text,
       color: color,
       isLoading: isLoading ?? false,
-      rightIcon: icon,
       onPress: onPress,
       disable: disable ?? false,
     );
@@ -46,7 +39,6 @@ class FormusButton extends StatelessWidget {
     required String text,
     final ButtonColorEnum? color,
     final bool? isLoading,
-    final FormusIconsEnum? icon,
     final Function()? onPress,
     final bool? disable,
   }) {
@@ -54,7 +46,6 @@ class FormusButton extends StatelessWidget {
       text: text,
       color: color,
       isLoading: isLoading ?? false,
-      leftIcon: icon,
       onPress: onPress,
       disable: disable ?? false,
     );
@@ -104,7 +95,6 @@ class FormusButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  if (leftIcon != null) _buttonIcons(),
                   Text(
                     text,
                     style: GoogleFonts.sora(
@@ -114,7 +104,6 @@ class FormusButton extends StatelessWidget {
                       textBaseline: TextBaseline.ideographic,
                     ),
                   ),
-                  if (rightIcon != null) _buttonIcons(),
                 ],
               ),
             ),
@@ -139,23 +128,5 @@ class FormusButton extends StatelessWidget {
 
     if (disable!) return const Color(0xFFFFF5F5);
     return FormusColors.theme.blue.medium;
-  }
-
-  Widget _buttonIcons() {
-    return Row(
-      children: [
-        if (rightIcon != null) const SizedBox(width: 4),
-        if (leftIcon != null || rightIcon != null)
-          FormusIcon(
-            color: _textButtonColor(),
-            icon: leftIcon != null ? leftIcon! : rightIcon!,
-            width: 20,
-            height: 20,
-            areaHeight: 24,
-            areaWidth: 24,
-          ),
-        if (leftIcon != null) const SizedBox(width: 4),
-      ],
-    );
   }
 }

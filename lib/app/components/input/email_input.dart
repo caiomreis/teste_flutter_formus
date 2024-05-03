@@ -1,5 +1,4 @@
 import 'package:Formus/app/components/input/Formus_input_base.dart';
-import 'package:Formus/app/style/formus_icons.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,11 +37,6 @@ class EmailInput extends StatelessWidget {
       onSubmit: () => onSubmit(),
       placeholder: placeholder,
       textController: textEditingController,
-      prefixIcon: const FormusIcon(
-        icon: FormusIconsEnum.email,
-        width: 20,
-        height: 16,
-      ),
     );
   }
 }

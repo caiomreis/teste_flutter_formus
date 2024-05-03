@@ -9,7 +9,7 @@ class MovieDetailController extends GetxController {
   bool isLoading = false;
   final MovieHttp _movieHttp = MovieHttp();
   late MovieDetailResponse movie;
-  late List<Cast> cast;
+  List<Cast> cast = [];
   TextEditingController textEditingController = TextEditingController();
   bool loadingMore = false;
   bool loadingCast = false;
